@@ -33,11 +33,12 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
+                
           <!-- Muestra el nombre y apellido del usuario, si están disponibles; de lo contrario, muestra "Name Last Name" -->
           <h1>${variables.name == null ? "Name" : variables.name} ${
     variables.lastName == null ? "Last Name" : variables.lastName
   }</h1>
-          <!-- Muestra el rol del usuario, si está disponible; de lo contrario, muestra "Role" -->
+          <!-- Muestra el rol del usuario, si está disponible; de lo contrario, muestra "Role" --> 
           <h2>${variables.role == null ? "Role" : variables.role} </h2>
           <!-- Muestra la ciudad y el país del usuario, si están disponibles; de lo contrario, muestra "City, Country" -->
           <h3>${variables.city == null ? "City" : variables.city}, ${
@@ -48,7 +49,7 @@ function render(variables = {}) {
             variables.socialMediaPosition == "position-left" ? "left" : "right"
           }">
 
-            <!-- Enlace a Twitter del usuario, por defecto 4geeksacademy si no está disponible -->
+            <!--/ Enlace a Twitter del usuario, por defecto 4geeksacademy si no está disponible -->
             <li><a href="https://twitter.com/${
               variables.twitter == null ? "4geeksacademy" : variables.twitter
             }"><i class="fab fa-twitter"></i></a></li>
