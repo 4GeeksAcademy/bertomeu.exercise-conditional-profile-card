@@ -33,25 +33,37 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
+          <!-- Muestra el nombre y apellido del usuario, si están disponibles; de lo contrario, muestra "Name Last Name" -->
           <h1>${variables.name == null ? "Name" : variables.name} ${
     variables.lastName == null ? "Last Name" : variables.lastName
   }</h1>
+          <!-- Muestra el rol del usuario, si está disponible; de lo contrario, muestra "Role" -->
           <h2>${variables.role == null ? "Role" : variables.role} </h2>
+          <!-- Muestra la ciudad y el país del usuario, si están disponibles; de lo contrario, muestra "City, Country" -->
           <h3>${variables.city == null ? "City" : variables.city}, ${
     variables.country == null ? "Country" : variables.country
   } </h3>
+          <!-- Lista de enlaces a redes sociales -->
           <ul class="position-${
             variables.socialMediaPosition == "position-left" ? "left" : "right"
           }">
+
+            <!-- Enlace a Twitter del usuario, por defecto 4geeksacademy si no está disponible -->
             <li><a href="https://twitter.com/${
               variables.twitter == null ? "4geeksacademy" : variables.twitter
             }"><i class="fab fa-twitter"></i></a></li>
+
+            <!-- Enlace a GitHub del usuario, por defecto 4geeksacademy si no está disponible -->
             <li><a href="https://github.com/${
               variables.github == null ? "4geeksacademy" : variables.github
             }"><i class="fab fa-github"></i></a></li>
+
+            <!-- Enlace a LinkedIn del usuario, por defecto 4geeksacademy si no está disponible -->
             <li><a href="https://linkedin.com/school/${
               variables.linkedin == null ? "4geeksacademy" : variables.linkedin
             }"><i class="fab fa-linkedin"></i></a></li>
+
+            <!-- Enlace a Instagram del usuario, por defecto 4geeksacademy si no está disponible -->
             <li><a href="https://instagram.com/${
               variables.instagram == null
                 ? "4geeksacademy"
